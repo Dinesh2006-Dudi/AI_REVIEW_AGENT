@@ -1,7 +1,7 @@
 """FastAPI app: thin HTTP layer over ReviewService. All business rules live in services.py."""
 from typing import Literal, Optional
 
-from fastapi import FastAPI, Path, Query
+from fastapi import FastAPI, Path as ApiPath, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
