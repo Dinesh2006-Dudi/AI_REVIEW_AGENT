@@ -131,7 +131,7 @@ def create_app(settings: Settings = None, service: ReviewService = None) -> Fast
         review_id: Optional[str] = Query(default=None, max_length=64),
     ):
         return service.results(status, rating, review_id)
-    dist = Path(__file__).resolve().parents[2] / "frontend" / "dist"
+    dist = FilePath(__file__).resolve().parents[2] / "frontend" / "dist"
     if dist.exists():
         app.mount("/", StaticFiles(directory=str(dist), html=True), name="frontend")
 
