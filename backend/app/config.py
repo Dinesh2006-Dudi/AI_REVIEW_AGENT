@@ -2,12 +2,12 @@
 import os
 from pathlib import Path as FilePath
 
-BASE_DIR = FilePath(__file__).resolve().parents()
+BASE_DIR = FilePath(__file__).resolve().parents[1]
 
 
 def load_env(path=None):
     """Tiny .env loader so no extra dependency is needed. Real env vars win."""
-    p = Path(path) if path else BASE_DIR / ".env"
+    p = FilePath(path) if path else BASE_DIR / ".env"
     if not p.exists():
         return
     for line in p.read_text(encoding="utf-8").splitlines():
