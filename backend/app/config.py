@@ -1,8 +1,8 @@
 """Configuration read from environment variables (optionally from backend/.env)."""
 import os
-from pathlib import Path
+from pathlib import Path as FilePath
 
-BASE_DIR = Path(__file__).resolve().parents[1]
+BASE_DIR = FilePath(__file__).resolve().parents()
 
 
 def load_env(path=None):
